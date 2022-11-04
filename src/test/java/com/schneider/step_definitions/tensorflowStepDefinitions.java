@@ -6,13 +6,8 @@ import com.schneider.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
-import org.w3c.dom.html.HTMLImageElement;
 
-import java.time.Duration;
 
 public class tensorflowStepDefinitions {
 
@@ -27,8 +22,7 @@ public class tensorflowStepDefinitions {
 
     @And("Reports the test loss value in the console")
     public void reports_the_test_loss_value_in_the_console() {
-        double lossTestValue = Double.parseDouble(basePage.lossTestValue.getText());
-        System.out.println("Initial loss test value = " + lossTestValue);
+        System.out.println("Initial loss test value = " + basePage.getTotalLossValue());
     }
 
     @Then("Changes dataset to exclusive")
@@ -38,14 +32,28 @@ public class tensorflowStepDefinitions {
 
     @Then("Changes noise to {int} percent")
     public void changes_noise_to_percent(Integer value) {
-//        Actions actions = new Actions(Driver.getDriver());
-//        actions.dragAndDropBy(basePage.noiseSlideBar, 136, 579).perform();
 
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-        
-
+//        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+//        executor.executeScript("arguments[0].click();", basePage.noiseSliderBar);
 //        executor.executeScript("arguments[0].setAttribute('style', ' flex: 0.1 1 0%; ')", basePage.noiseSliderBar);
 //        executor.executeScript("arguments[0].setAttribute('style', ' flex: 0.9 1 0%; ')", basePage.noiseSliderBar);
+
+//        Point point = basePage.noiseSliderBar.getLocation();
+//        int xAxis = point.getX();
+//        int yAxis = point.getY();
+//
+//        System.out.println("xAxis = " + xAxis);
+//        System.out.println("yAxis = " + yAxis);
+//
+//        Actions actions = new Actions(Driver.getDriver());
+//        actions.dragAndDropBy(basePage.noiseSliderBar, xAxis, yAxis).perform();
+
+//        Actions(driver).moveToElement(element).moveByOffset(dx, dy).click().perform();
+//        Action action = actions.dragAndDropBy(basePage.noiseSliderBar, xAxis, yAxis).build();
+
+
+
+
     }
 
     @Then("Selects two more features")
@@ -77,17 +85,18 @@ public class tensorflowStepDefinitions {
         basePage.runSimulationButton.click();
     }
 
+
+
     @And("Waits until epoch value is more than {double}")
-    public void waitsUntilEpochValueIsMoreThan(Double value) {
+    public void waitsUntilEpochValueIsMoreThan(Double value) throws InterruptedException {
 
-//        double expectedValue = 3.0;
-//        double epochValue = Double.parseDouble(basePage.epochValue.getText());
-//        boolean epoch;
-
+        basePage.waitEpochValue();
 
     }
 
     @Then("Reports new test loss value in the console")
     public void reportsNewTestLossValueInTheConsole() {
+        System.out.println("Final loss test value = " + basePage.getTotalLossValue());
+
     }
 }
