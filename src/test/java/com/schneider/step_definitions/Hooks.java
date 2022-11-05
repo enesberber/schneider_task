@@ -10,12 +10,12 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
-//    @Before
+    @Before
     public void setUp(){
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-//    @After
+    @After
     public void tearDownScenario(Scenario scenario) {
         /**
          * Scenario scenario: represents current running cucumber scenario

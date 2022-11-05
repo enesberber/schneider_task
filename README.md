@@ -2,13 +2,21 @@
 
 ✔ HOW TO SETUP THE ENVIRONMENT AND RUN THE TESTS? 
 
-    > This assignment is written with Java on Selenium
+    > This assignment is written with Java on Selenium. 
 
-    > It can be run with any IDE that supports Java (i.e. IntellJ, Eclipse, ...)
+    > It can be run with any IDE that supports Java (i.e. IntellJ, Eclipse, ...).
 
-    > Simply clone the repository and run the project
+    > Simply clone the repository and run the project from the CukesRunner under the runners folder.
 
-    > All dependencies and plugins are already saved under pom.xml file
+    > All dependencies and plugins are already saved under pom.xml file.
+
+    > Values are dynamic and can be changed from the Scenario under tensorflow.feature file, without deep-diving in the codes.
+
+    > Watch assertions and error messages on the console if the tests fail. You will see brief fail reasons and places on the console.
+
+    > You may also check the Cucumber report file (cucumber-report.html) under the target folder. This report contains test summary including screenshots if the test case fails.
+
+    > You do not re-run whole project after maintenence. FailedTestRunner file keeps record of the failing scenarios. You may only run the failing ones by simply running the project through the FailedTestRunner.
 
     Enjoy :)
 
