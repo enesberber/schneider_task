@@ -7,6 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BasePage {
 
@@ -56,8 +60,9 @@ public class BasePage {
     }
 
     /**
-     * Setting noise value according to the requirement
-     * @param value is between 0-50
+     * I created a dynamic structure. The user enters the value between 0-50
+     * If value is (valid = implement), (else = assign noise value to default = 0 and continue test)
+     * @param value = from user
      */
     public void setNoiseValue(int value) {
 
@@ -76,6 +81,33 @@ public class BasePage {
             }
         } else {
             actions.release().perform();
+        }
+
+
+
+
+    }
+
+    /**
+     * I created a dynamic structure; this method gets learning rate value from the user
+     * and checks if it is a valid value (that are listed under the dropdown menu)
+     * (if valid = implement), (else = assign default rate value and continue to the test)
+     * @param value=from user
+     */
+    public void selectLearningRate(String value){
+        Select select = new Select(learningRateDropdownMenu);
+        List<WebElement> learningRateValues = select.getOptions();
+        List<String> validRateValues = new ArrayList<>();
+
+        for(int i = 0; i < learningRateValues.size(); i++){     //Iterate through dropdown webElements and getText
+            validRateValues.add(learningRateValues.get(i).getText());
+        }
+
+        if(validRateValues.contains(value)){                    //Check whether the user input value is valid or not
+            select.selectByValue(String.valueOf(value));
+        }else{
+            select.selectByValue(select.getFirstSelectedOption().getText());
+            System.err.println("Invalid learning rate value: Default value of 0.03 is selected");
         }
     }
 

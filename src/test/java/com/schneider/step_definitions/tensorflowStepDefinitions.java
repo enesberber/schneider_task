@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.*;
 
 public class tensorflowStepDefinitions {
 
-    /** I implemented Page Object Model and saved web elements under the BasePage
+    /**
+     * I implemented Page Object Model and saved web elements under the BasePage
      * I also used BrowserUtils page for storing common useful methods
      */
     BasePage basePage = new BasePage();
@@ -33,53 +34,24 @@ public class tensorflowStepDefinitions {
 
     @Then("Changes noise to {int} percent")
     public void changes_noise_to_percent(Integer value) {
-
-//        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-//        executor.executeScript("arguments[0].click();", basePage.noiseSliderBar);
-//        executor.executeScript("arguments[0].setAttribute('style', ' flex: 0.1 1 0%; ')", basePage.noiseSliderBar);
-//        executor.executeScript("arguments[0].setAttribute('style', ' flex: 0.9 1 0%; ')", basePage.noiseSliderBar);
-
-//        new Actions(Driver.getDriver()).moveToElement(basePage.noiseSliderBar).moveByOffset(xAxis+20, yAxis).click().perform();
-//        Action action = actions.dragAndDropBy(basePage.noiseSliderBar, xAxis, yAxis).build();
-
-//        Point point = basePage.noiseSliderBar.getLocation();
-//        int xAxis = point.getX();
-//        int yAxis = point.getY();
-
-//
-//        System.out.println("xAxis = " + xAxis);
-//        System.out.println("yAxis = " + yAxis);
-
-
-/*        Dimension size = basePage.noiseSliderBar.getSize();
-        System.out.println("Slider size = " + size);
-        actions.dragAndDropBy(basePage.noiseSliderBar,xAxis-180, 0).release().perform();*/
-
         basePage.setNoiseValue(value);
     }
 
     @Then("Selects two more features")
     public void selects_two_more_features() {
-        //Select XSquared feature
-        basePage.featureXSquaredButton.click();
-
-        //Select YSquared feature
-        basePage.featureYSquaredButton.click();
+        basePage.featureXSquaredButton.click();     //Select XSquared feature
+        basePage.featureYSquaredButton.click();     //Select YSquared feature
     }
 
     @Then("Removes one neuron from the left and one neuron from the right row")
     public void removesOneNeuronFromTheLeftAndOneNeuronFromTheRightRow() {
-        //Remove neuron from the left row
-        basePage.removeNeuronButtonLeft.click();
-
-        //Remove neuron from the right row
-        basePage.removeNeuronButtonRight.click();
+        basePage.removeNeuronButtonLeft.click();    //Remove one neuron from the left row
+        basePage.removeNeuronButtonRight.click();   //Remove one neuron from the right row
     }
 
     @Then("Changes learning rate to {string}")
     public void changes_learning_rate_to(String value) {
-        Select select = new Select(basePage.learningRateDropdownMenu);
-        select.selectByValue(String.valueOf(value));
+        basePage.selectLearningRate(value);
     }
 
     @And("Clicks to run the simulation button")
@@ -90,7 +62,6 @@ public class tensorflowStepDefinitions {
     @And("Waits until epoch value is more than {double}")
     public void waitsUntilEpochValueIsMoreThan(Double value) {
         basePage.waitEpochValue(value);
-
     }
 
     @Then("Reports new test loss value in the console")

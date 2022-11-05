@@ -15,7 +15,7 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    @After
+//    @After
     public void tearDownScenario(Scenario scenario) {
         /**
          * Scenario scenario: represents current running cucumber scenario
