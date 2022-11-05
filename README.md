@@ -20,7 +20,7 @@
 
     Enjoy :)
 
-REQUIREMENTS
+✔ REQUIREMENTS
 
 In this assignment, you should write an automation test scenario for Play ground tensor flow. TensorFlow Playground is an interactive web app that allows users to test artificial intelligence (AI) algorithms with Google's TensorFlow machine learning libraries. You do not need any AI knowledge to do this task. 
   
