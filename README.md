@@ -12,11 +12,11 @@
 
     > Values are dynamic and can be changed from the Scenario under tensorflow.feature file without deep-diving in the codes.
 
-    > Watch assertions and error messages on the console if the tests fail. You will see brief fail reasons and places on the console.
+    > Watch assertions and error messages on the console if the tests fail. You will see brief explanations on the console.
 
     > You may also check the Cucumber report file (cucumber-report.html) under the target folder. This report contains test summary including screenshots if the test case fails.
 
-    > You do not re-run whole project after maintenence. FailedTestRunner file keeps record of the failing scenarios. You may only run the failing ones by simply running the project through the FailedTestRunner.
+    > You do not need to re-run whole project after maintenence (if needed). FailedTestRunner file keeps record of the failing scenarios. You can simply run the failing ones by FailedTestRunner.
 
     Enjoy :)
 
