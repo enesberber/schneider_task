@@ -1,6 +1,6 @@
 # Schneider Electrics Assignment - by Enis Aldemir
 
-✔ HOW TO SETUP THE ENVIRONMENT AND RUN THE TESTS? 
+✔ BRIEF SUMMARY AND SETUP ISNTRUCTIONS 
 
     > This assignment is written with Java on Selenium. 
 
