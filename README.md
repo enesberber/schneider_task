@@ -10,7 +10,7 @@
 
     > All dependencies and plugins are already saved under pom.xml file.
 
-    > Values are dynamic and can be changed from the Scenario under tensorflow.feature file, without deep-diving in the codes.
+    > Values are dynamic and can be changed from the Scenario under tensorflow.feature file without deep-diving in the codes.
 
     > Watch assertions and error messages on the console if the tests fail. You will see brief fail reasons and places on the console.
 
