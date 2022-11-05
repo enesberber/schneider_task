@@ -8,7 +8,7 @@ Feature: Automated test case for Schneider task on playgroung.tensorflow.org pag
     And Changes noise to 5 percent
     And Selects two more features
     Then Removes one neuron from the left and one neuron from the right row
-    Then Changes learning rate to 0.1
+    Then Changes learning rate to "0.1"
     And Clicks to run the simulation button
     And Waits until epoch value is more than 0.3
     And Reports new test loss value in the console

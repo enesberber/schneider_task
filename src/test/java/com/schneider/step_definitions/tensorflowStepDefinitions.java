@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.*;
 public class tensorflowStepDefinitions {
 
     /** I implemented Page Object Model and saved web elements under the BasePage
+     * I also used BrowserUtils page for storing common useful methods
      */
     BasePage basePage = new BasePage();
 
@@ -38,22 +39,23 @@ public class tensorflowStepDefinitions {
 //        executor.executeScript("arguments[0].setAttribute('style', ' flex: 0.1 1 0%; ')", basePage.noiseSliderBar);
 //        executor.executeScript("arguments[0].setAttribute('style', ' flex: 0.9 1 0%; ')", basePage.noiseSliderBar);
 
+//        new Actions(Driver.getDriver()).moveToElement(basePage.noiseSliderBar).moveByOffset(xAxis+20, yAxis).click().perform();
+//        Action action = actions.dragAndDropBy(basePage.noiseSliderBar, xAxis, yAxis).build();
+
 //        Point point = basePage.noiseSliderBar.getLocation();
 //        int xAxis = point.getX();
 //        int yAxis = point.getY();
+
 //
 //        System.out.println("xAxis = " + xAxis);
 //        System.out.println("yAxis = " + yAxis);
-//
-//        Actions actions = new Actions(Driver.getDriver());
-//        actions.dragAndDropBy(basePage.noiseSliderBar, xAxis, yAxis).perform();
-
-//        Actions(driver).moveToElement(element).moveByOffset(dx, dy).click().perform();
-//        Action action = actions.dragAndDropBy(basePage.noiseSliderBar, xAxis, yAxis).build();
 
 
+/*        Dimension size = basePage.noiseSliderBar.getSize();
+        System.out.println("Slider size = " + size);
+        actions.dragAndDropBy(basePage.noiseSliderBar,xAxis-180, 0).release().perform();*/
 
-
+        basePage.setNoiseValue(value);
     }
 
     @Then("Selects two more features")
@@ -74,8 +76,8 @@ public class tensorflowStepDefinitions {
         basePage.removeNeuronButtonRight.click();
     }
 
-    @Then("Changes learning rate to {double}")
-    public void changes_learning_rate_to(Double value) {
+    @Then("Changes learning rate to {string}")
+    public void changes_learning_rate_to(String value) {
         Select select = new Select(basePage.learningRateDropdownMenu);
         select.selectByValue(String.valueOf(value));
     }
@@ -85,18 +87,14 @@ public class tensorflowStepDefinitions {
         basePage.runSimulationButton.click();
     }
 
-
-
     @And("Waits until epoch value is more than {double}")
-    public void waitsUntilEpochValueIsMoreThan(Double value) throws InterruptedException {
-
-        basePage.waitEpochValue();
+    public void waitsUntilEpochValueIsMoreThan(Double value) {
+        basePage.waitEpochValue(value);
 
     }
 
     @Then("Reports new test loss value in the console")
     public void reportsNewTestLossValueInTheConsole() {
         System.out.println("Final loss test value = " + basePage.getTotalLossValue());
-
     }
 }

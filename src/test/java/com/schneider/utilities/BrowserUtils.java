@@ -9,8 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 public class BrowserUtils {
 
     /**
-     * Performs a pause
-     *
+     * Performs a pause for 10 milliseconds
      */
     public static void waitFor() {
         try {
