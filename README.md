@@ -10,7 +10,7 @@
 
     > All dependencies and plugins are already saved under pom.xml file.
 
-    > Requirement values converted into dynamic for ease of maintanence and can be changed from the tensorflow.feature file without deep-diving into the codes.
+    > Requirement values converted into dynamic for ease of maintanence and can be changed from the tensorflow.feature file under resources/features folder without deep-diving into the codes.
 
     > Watch assertions and error messages on the console if the test fails. You will find brief explanations for the failure(s) on the console.
 
