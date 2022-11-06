@@ -6,7 +6,7 @@
 
     > It can be run with any IDE that supports Java (i.e. IntellJ, Eclipse, ...).
 
-    > Simply clone the repository and run the project from the CukesRunner under the runners folder.
+    > Simply clone the repository and run the project from the CukesRunner under the com/schneider/runners folder.
 
     > All dependencies and plugins are already saved under pom.xml file.
 
@@ -14,7 +14,7 @@
 
     > Watch assertions and error messages on the console if the test fails. You will find brief explanations for the failure(s) on the console.
 
-    > You may also check the Cucumber report file (cucumber-report.html) under the target folder. This report contains test summary including screenshots if the test case fails.
+    > Also check the Cucumber report file (cucumber-report.html) under the target folder for test summary. This report contains test summary including screenshots for failing test cases().
 
     > Finally, you do not need to re-run whole project after maintenence (if needed). FailedTestRunner file keeps record of the failing scenarios. You can simply run the failing scenario(s) through FailedTestRunner.
 
