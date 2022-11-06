@@ -14,11 +14,11 @@
 
     > Requirement values converted into dynamic for ease of maintanence and can be changed from the tensorflow.feature file under resources/features folder without deep-diving into the codes.
 
-    > Watch assertions and error messages on the console if the test fails. You will find brief explanations for the failure(s) on the console.
+    > Assertions and error messages indicate brief explanations for the failure(s) on the console.
 
-    > Also check the Cucumber report file (cucumber-report.html) under the target folder for test summary. This report contains test summary including screenshots for failing test cases().
+    > Also check the Cucumber report file (cucumber-report.html) under the target folder for test summary. This report contains test summary including screenshots for failing test case(s).
 
-    > Finally, you do not need to re-run whole project after maintenence (if needed). FailedTestRunner file keeps record of the failing scenarios. You can simply run the failing scenario(s) through FailedTestRunner.
+    > Finally, you do not need to re-run whole project after failing tests. FailedTestRunner file keeps record of the failing scenarios (if there are more than one). You can simply run the failing scenario(s) through FailedTestRunner.
 
     Enjoy :)
 
