@@ -9,6 +9,8 @@
     > Simply clone the repository and run the project from the CukesRunner under the com/schneider/runners folder.
 
     > All dependencies and plugins are already saved under pom.xml file.
+    
+    > Page Object Model (POM), Object Oriented Programming (OOP), Data Driven Testing (DDT) principles are implemented in the framework.  
 
     > Requirement values converted into dynamic for ease of maintanence and can be changed from the tensorflow.feature file under resources/features folder without deep-diving into the codes.
 
