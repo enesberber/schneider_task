@@ -50,3 +50,7 @@ Write an automated test case that ends up in the state of the picture:
  
 
 ![image](https://user-images.githubusercontent.com/87227909/200098740-51dc41e8-a909-4ecc-b688-0bf37410aba3.png)
+
+Cucumber Report
+![SchneiderCucumberReport](https://user-images.githubusercontent.com/87227909/200175946-6df709f8-6022-4cc1-a401-a74e8fc4e2a5.jpg)
+
