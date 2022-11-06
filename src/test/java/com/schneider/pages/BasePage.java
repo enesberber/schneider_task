@@ -102,7 +102,7 @@ public class BasePage {
         boolean isLeftNeuronNumberCorrect = numberOfNeuronsLeft.getText().equals(expectedLeftNeuronNumber);
         Assert.assertTrue("Neuron is not removed from the left", isLeftNeuronNumberCorrect);
 
-//        removeNeuronButtonRight.click();   //Remove one neuron from the right row
+        removeNeuronButtonRight.click();   //Remove one neuron from the right row
         String expectedRightNeuronNumber = "1 neuron";
         boolean isRightNeuronNumberCorrect = numberOfNeuronsRight.getText().equals(expectedRightNeuronNumber);
         Assert.assertTrue("Neuron is not removed from the right", isRightNeuronNumberCorrect);
