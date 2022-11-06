@@ -12,7 +12,6 @@ public class ConfigurationReader {
     static{
 
         try {
-
             //2- We need to open the file in java memory: FileInputStream
             FileInputStream file = new FileInputStream("configuration.properties");
 
@@ -22,18 +21,13 @@ public class ConfigurationReader {
             //close the file
             file.close();
 
-
         } catch (IOException e) {
             System.out.println("File not found in the ConfigurationReader class.");
             e.printStackTrace();
         }
 
     }
-
     public static String getProperty(String keyword){
         return properties.getProperty(keyword);
     }
-
-
-
 }

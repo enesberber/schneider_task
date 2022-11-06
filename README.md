@@ -47,9 +47,10 @@ Write an automated test case that ends up in the state of the picture:
     ix.	Wait until epoch is more than 0.3 (i).
 
     x.	Report the test loss value in console (h).
- 
 
 ![image](https://user-images.githubusercontent.com/87227909/200098740-51dc41e8-a909-4ecc-b688-0bf37410aba3.png)
+
+
 
 Cucumber Report
 ![SchneiderCucumberReport](https://user-images.githubusercontent.com/87227909/200176947-64cc41c1-5aaf-42af-b3ed-dc8518dbaf23.jpg)
