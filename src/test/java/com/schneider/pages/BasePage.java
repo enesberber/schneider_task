@@ -73,7 +73,7 @@ public class BasePage {
     public void changeDatasetToExclusive() {
         datasetExclusive.click();
         boolean isExclusiveSelected = datasetExclusive.getAttribute("class").contains("selected");
-        Assert.assertTrue("Dataset is not selected to \"Exclueive\"", isExclusiveSelected);
+        Assert.assertTrue("Dataset is not selected to \"Exclusive\"", isExclusiveSelected);
     }
 
 
@@ -97,15 +97,16 @@ public class BasePage {
      * And making Assertion whether the neurons are removed or not
      */
     public void removeNeurons(){
-        removeNeuronButtonLeft.click();    //Remove one neuron from the left row
-        String expectedLeftNeuronNumber = "3 neurons";
-        boolean isLeftNeuronNumberCorrect = numberOfNeuronsLeft.getText().equals(expectedLeftNeuronNumber);
-        Assert.assertTrue("Neuron is not removed from the left", isLeftNeuronNumberCorrect);
 
+        int initialNeuronNumLeft = Integer.parseInt(numberOfNeuronsLeft.getText().substring(0,1)); //Get initial neuron numbers left for assertion
+        removeNeuronButtonLeft.click();    //Remove one neuron from the left row
+        int actualNeuronNumberLeft = Integer.parseInt(numberOfNeuronsLeft.getText().substring(0,1)); //Get neuron numbers after removal
+        Assert.assertTrue("Neuron is not removed from the left column", actualNeuronNumberLeft == initialNeuronNumLeft-1);
+
+        int initialNeuronNumRight = Integer.parseInt(numberOfNeuronsRight.getText().substring(0,1)); //Get initial neuron numbers right for assertion
         removeNeuronButtonRight.click();   //Remove one neuron from the right row
-        String expectedRightNeuronNumber = "1 neuron";
-        boolean isRightNeuronNumberCorrect = numberOfNeuronsRight.getText().equals(expectedRightNeuronNumber);
-        Assert.assertTrue("Neuron is not removed from the right", isRightNeuronNumberCorrect);
+        int actualNeuronNumberRight = Integer.parseInt(numberOfNeuronsRight.getText().substring(0,1)); //Get neuron numbers after removal
+        Assert.assertTrue("Neuron is not removed from the right column", actualNeuronNumberRight == initialNeuronNumRight-1);
     }
 
 
@@ -119,12 +120,13 @@ public class BasePage {
     public void setNoiseValue(int value) {
         value = Math.round(value / 5) * 5;  //Rounded input value to nearest x5
 
-        if (value < 0 || value > 50) {
+        if (value < 0 || value > 50) {      //Noise rate should be between 0-50 (0-55 with rounding up)
             System.err.println("Invalid noise value: Default value of 0 is selected");
             System.exit(-1);
         }
 
         // Assigned factor value corresponding to the user input value ==> for validation and actions.sendKeys purposes
+        // If an invalid rate value is assigned, the code will take this as default (0) and will run anyway (with Exit Status -1)
         int factor = (value == 0) ? 5 : (value == 5) ? 4 : (value == 10) ? 3 : (value == 15) ? 2 : (value == 20) ? 1 : (value == 25) ? 0 :
                 (value == 30) ? -1 : (value == 35) ? -2 : (value == 40) ? -3 : (value == 45) ? -4 : (value == 50) ? -5 : 5;
 
