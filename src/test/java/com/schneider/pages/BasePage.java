@@ -57,7 +57,6 @@ public class BasePage {
     @FindBy(xpath = "//span[@id='iter-number']")
     public WebElement epochValueElement;
 
-
     /**
      * This method is for reading total loss value
      */
@@ -190,10 +189,10 @@ public class BasePage {
             epochValue = checkEpochValue(); //Calling above method to read the current epochValue
             BrowserUtils.waitFor();
             if (epochValue > value) {
-                i = 1000; //Will break the loop when expected condition is met
+                break;
             }
         }
-        Assert.assertTrue("Epoch value is not greater than 3.0", checkEpochValue()>value);
+        Assert.assertTrue("Epoch value is not greater than " + value, checkEpochValue()>value);
         return lossTestValue = getTotalLossValue();
     }
 

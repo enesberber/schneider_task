@@ -1,4 +1,4 @@
-# Assignment - by Enis Aldemir
+# Schneider Electric Assignment - by Enis Aldemir
 
 ✔ BRIEF SUMMARY AND SETUP ISNTRUCTIONS 
 

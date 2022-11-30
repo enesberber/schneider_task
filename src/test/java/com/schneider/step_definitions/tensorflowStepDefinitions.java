@@ -3,6 +3,7 @@ package com.schneider.step_definitions;
 import com.schneider.pages.BasePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class tensorflowStepDefinitions {
 
@@ -56,4 +57,5 @@ public class tensorflowStepDefinitions {
     public void reportsNewTestLossValueInTheConsole() {
         System.out.println("Final loss test value = " + basePage.getTotalLossValue());
     }
+
 }
